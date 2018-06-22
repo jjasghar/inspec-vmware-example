@@ -1,0 +1,10 @@
+name: powercli-inspec-example
+title: An example InSpec profile that runs PowerCLI
+maintainer: JJ Asghar
+copyright: JJ Asghar
+copyright_email: jj@chef.io
+license: Apache-2.0
+summary: An example InSpec Compliance Profile for TSM-SSH
+version: 0.1.0
+- name: power-cli
+  git: https://github.com/jjasghar/powercli-inspec.git

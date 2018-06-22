@@ -1,0 +1,3 @@
+viserver: # hostname or IP here
+username: root # or whatever your local connection is
+password: password # your password for the above user
