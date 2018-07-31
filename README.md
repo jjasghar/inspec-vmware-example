@@ -1,4 +1,4 @@
-# PowerCLI-InSpec Example Profile
+# InSpec-VMware Example Profile
 
 ## Scope
 
@@ -9,15 +9,15 @@ This has an example of the `powercli_command` and `TSM-SSH` control.
 ### Setup
 
 ```shell
-$ git clone https://github.com/jjasghar/powercli-inspec-example.git
-$ cd powercli-inspec-example
-$ ~/powercli-inspec-example inspec vendor
+$ git clone https://github.com/jjasghar/inspec-vmware-example.git
+$ cd inspec-vmware-example
+$ ~/inspec-vmware-example inspec vendor
 ```
 
 After these command run `vi esxi.yml` and edit it to fit your ESXi instance.
 
 ```shell
-$ ~/powercli-inspec-example inspec exec . --attrs esxi.yml
+$ ~/inspec-vmware-example inspec exec . -t vmware://USERNAME@VISERVER --password PASSWORD
 ```
 
 ### Self-Signed Certs

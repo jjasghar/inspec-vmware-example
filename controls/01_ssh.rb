@@ -1,9 +1,4 @@
 # frozen_string_literal: true
-conn_options = {
-  viserver: attribute('viserver', description: 'The server you want to connect to'),
-  username: attribute('username', description: 'Username to connect as'),
-  password: attribute('password', description: 'Password to connect with')
-}
 
 control '1-disable-ssh' do
   cmd = 'Get-VMhost | Get-VMHostService | Where {$_.key -eq "TSM-SSH" -and $_.running -eq $False}'
