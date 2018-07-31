@@ -3,6 +3,7 @@
 ## Pre-Reqs (notes for setup)
 - A machine that has PowerCLI installed that can reach ESXi
 - An ESXi machine that can turn SSH on and off (root can), start with SSH turned on.
+- `bundle exec inspec vendor` the directory to pull down the dependency
 
 _Note:_ The original work is [here](https://www.youtube.com/watch?v=-WCGz_CjRYs).
 
