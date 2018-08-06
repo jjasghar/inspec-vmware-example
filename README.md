@@ -2,28 +2,35 @@
 
 ## Scope
 
-This has an example of the `powercli_command` and `TSM-SSH` control.
+This is an example of the `powercli_command` InSpec resource and a `TSM-SSH` control.
 
 ## Usage
 
 ### Setup
 
+#### Via Vagrant
+
 ```shell
-$ git clone https://github.com/jjasghar/inspec-vmware-example.git
-$ cd inspec-vmware-example
-$ ~/inspec-vmware-example inspec vendor
+vagrant up
+vagrant ssh
+sudo pwsh -Command "& {Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:\\$False}"
+inspec exec inspec-vmware-example -t vmware://USERNAME@VISERVER --password PASSWORD
 ```
 
-After these command run `vi esxi.yml` and edit it to fit your ESXi instance.
+#### Via Bundle
 
 ```shell
-$ ~/inspec-vmware-example inspec exec . -t vmware://USERNAME@VISERVER --password PASSWORD
+git clone https://github.com/jjasghar/inspec-vmware-example.git
+cd inspec-vmware-example
+bundle install
+bundle exec inspec vendor
+sudo pwsh -Command "& {Set-PowerCLIConfiguration -InvalidCertificateAction Ignore -Confirm:\\$False}"
+bundle exec inspec exec . -t vmware://USERNAME@VISERVER --password PASSWORD
 ```
 
 ### Self-Signed Certs
 
-If you have self signed certificates on your ESXi/vCenter instances you will need to run the following commands from the
-host you want to run InSpec from.
+If you have self signed certificates on your ESXi/vCenter instances you will need to run the following commands from the host you want to run InSpec from.
 
 ```powershell
 $ pwsh
