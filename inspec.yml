@@ -8,4 +8,4 @@ summary: An example InSpec Compliance Profile for TSM-SSH
 version: 1.0.0
 depends:
   - name: inspec-vmware
-    git: git@github.com:inspec/inspec-vmware.git
+    git: https://github.com/inspec/inspec-vmware.git
